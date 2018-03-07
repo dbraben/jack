@@ -1,16 +1,351 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title></title>
-        
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/css/main.min.css">
-    </head>
-    <body>
-        <script src="assets/js/jquery-1.11.3.min.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
-    </body>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Amadeus People</title>
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/amadeuspeople.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+    <script src="assets/js/amadeuspeople.js" ></script>
+
+    <script src="assets/js/vendors/jquery-3.1.1.slim.min.js"></script>
+    <script src="assets/js/vendors/bootstrap.min.js" ></script>
+
+</head>
+
+<body>
+    <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+            <symbol id="amadeus-seater-car" viewBox="0 0 32 32">
+            <title>seater-car</title>
+            <path fill="#fff" style="fill: var(--color1, #fff)" d="M31.458 18.704c-0.217-1.573-1.123-3.030-2.487-3.983l-8.608-6.013c-1.705-1.185-3.696-1.813-5.772-1.813h-8.415c-0.86 0-1.627 0.542-1.914 1.356l-2.363 6.741c-0.054 0.163-0.139 0.31-0.256 0.442l-0.372 0.442c-0.116 0.139-0.209 0.294-0.279 0.465-0.17 0.442-0.558 2.084-0.473 3.355 0.008 0.17 0.163 0.302 0.325 0.287 0.17-0.008 0.294-0.155 0.287-0.325-0.077-1.162 0.287-2.704 0.434-3.099 0.039-0.101 0.101-0.201 0.17-0.287l0.372-0.442c0.101-0.124 0.186-0.263 0.256-0.403 0.178 0.015 0.434 0.039 0.721 0.039 0.542 0 1.185-0.077 1.573-0.38 0.209-0.163 0.341-0.387 0.364-0.651 0.101-1.007-1.093-1.519-1.689-1.712l1.503-4.277c0.201-0.566 0.736-0.945 1.34-0.945h8.415c1.945 0 3.82 0.589 5.416 1.705l8.608 6.013c1.232 0.86 2.046 2.154 2.231 3.564 0.023 0.155 0.031 0.294 0.031 0.426 0.015 0.713-0.116 1.364-0.225 1.774-0.054 0.194-0.225 0.325-0.426 0.325h-0.442c-0.17 0-0.31 0.139-0.31 0.31 0 1.581-1.286 2.875-2.875 2.875-1.581 0-2.875-1.286-2.875-2.875 0-1.581 1.286-2.875 2.875-2.875 0.17 0 0.31-0.139 0.31-0.31s-0.139-0.31-0.31-0.31c-1.922 0-3.487 1.565-3.487 3.487s1.565 3.487 3.487 3.487c1.821 0 3.316-1.402 3.471-3.177h0.147c0.48 0 0.899-0.325 1.023-0.783 0.116-0.457 0.256-1.162 0.24-1.945 0.015-0.147 0-0.31-0.023-0.488zM4.416 14.381c-0.008 0.093-0.046 0.163-0.132 0.225-0.318 0.248-1.093 0.271-1.689 0.225l0.535-1.519c0.519 0.163 1.34 0.535 1.286 1.069z"></path>
+            <path fill="#fff" style="fill: var(--color1, #fff)" d="M21.61 21.315h-13.18c-0.17 0-0.31 0.139-0.31 0.31 0 1.581-1.286 2.875-2.875 2.875s-2.867-1.294-2.867-2.882c0-1.581 1.286-2.875 2.875-2.875 0.17 0 0.31-0.139 0.31-0.31s-0.139-0.31-0.31-0.31c-1.922 0-3.487 1.565-3.487 3.487s1.565 3.487 3.487 3.487c1.821 0 3.316-1.402 3.471-3.177h12.885c0.17 0 0.31-0.139 0.31-0.31 0-0.163-0.139-0.294-0.31-0.294z"></path>
+            <path fill="#fff" style="fill: var(--color1, #fff)" d="M23.492 13.776c0.085-0.232 0.008-0.496-0.194-0.643l-4.974-3.634c-0.573-0.418-1.255-0.666-1.96-0.705l-6.237-0.395c-0.814-0.054-1.557 0.55-1.674 1.364l-0.302 2.092c-0.046 0.341 0.046 0.69 0.263 0.953s0.535 0.434 0.876 0.449l13.645 0.883c0.015 0 0.023 0 0.039 0 0.232 0 0.434-0.139 0.519-0.364zM9.329 12.645c-0.178-0.008-0.333-0.093-0.442-0.225-0.108-0.139-0.155-0.302-0.132-0.48l0.302-2.092c0.070-0.48 0.488-0.837 0.969-0.837 0.023 0 0.039 0 0.062 0l6.237 0.395c0.597 0.039 1.162 0.24 1.643 0.589l4.827 3.525-13.466-0.876z"></path>
+            </symbol>
+            <symbol id="amadeus-wheel-drive" viewBox="0 0 32 32">
+            <title>wheel-drive</title>
+            <path fill="#fff" style="fill: var(--color1, #fff)" d="M29.311 14.892l-4.076-1.147c-0.008 0-0.015-0.008-0.031-0.008-0.194-0.031-0.372-0.101-0.542-0.201l-4.432-2.758c-1.542-0.961-2.425-1.511-4.207-1.565v-1.162h1.123c0.155 0 0.279-0.124 0.279-0.279s-0.124-0.279-0.279-0.279h-13.273c-0.155 0-0.279 0.124-0.279 0.279s0.124 0.279 0.279 0.279h1.077v1.162h-0.457c-0.682 0-1.302 0.403-1.565 1.038-0.403 0.945-0.945 2.534-1.216 4.695-0.256 2.046-0.364 3.355-0.403 4.091-0.039 0.581 0.349 1.1 0.907 1.247l2.634 0.674c0.147 0.039 0.294-0.054 0.333-0.201s-0.054-0.294-0.201-0.333l-2.634-0.674c-0.302-0.077-0.511-0.364-0.496-0.682 0.046-0.728 0.155-2.022 0.403-4.052 0.263-2.092 0.783-3.626 1.17-4.54 0.178-0.426 0.597-0.697 1.062-0.697h11.258c1.813 0 2.611 0.496 4.192 1.48l4.432 2.758c0.225 0.139 0.465 0.232 0.721 0.279l4.076 1.147c0.008 0 0.015 0.008 0.031 0.008 1.007 0.17 1.743 1.038 1.743 2.061v2.727c0 0.194-0.139 0.364-0.333 0.395l-1.449 0.24c-0.008 0-0.023 0.008-0.031 0.008-0.015 0.008-0.039 0.008-0.054 0.023-0.015 0.008-0.031 0.015-0.039 0.031-0.015 0.008-0.023 0.023-0.039 0.039-0.008 0.015-0.023 0.031-0.031 0.047s-0.015 0.031-0.023 0.047c-0.008 0.015-0.008 0.039-0.008 0.054 0 0.008-0.008 0.023-0.008 0.031 0 1.557-1.263 2.82-2.82 2.82s-2.82-1.263-2.82-2.82 1.263-2.82 2.82-2.82c0.155 0 0.279-0.124 0.279-0.279s-0.124-0.279-0.279-0.279c-1.86 0-3.378 1.511-3.378 3.378s1.511 3.378 3.378 3.378c1.782 0 3.239-1.387 3.363-3.138l1.232-0.201c0.465-0.077 0.798-0.473 0.798-0.938v-2.727c0-1.317-0.922-2.41-2.185-2.634zM5.501 8.050h9.98v1.162h-9.98v-1.162z"></path>
+            <path fill="#fff" style="fill: var(--color1, #fff)" d="M21.842 20.85h-9.825c-0.155 0-0.279 0.124-0.279 0.279 0 1.557-1.263 2.82-2.82 2.82s-2.82-1.263-2.82-2.82 1.263-2.82 2.82-2.82c0.155 0 0.279-0.124 0.279-0.279s-0.124-0.279-0.279-0.279c-1.86 0-3.378 1.511-3.378 3.378s1.511 3.378 3.378 3.378c1.767 0 3.223-1.364 3.363-3.099h9.561c0.155 0 0.279-0.124 0.279-0.279-0.008-0.155-0.132-0.279-0.279-0.279z"></path>
+            <path fill="#fff" style="fill: var(--color1, #fff)" d="M22.958 14.977c0.124-0.155 0.163-0.356 0.108-0.55l-0.008-0.015c-0.124-0.442-0.411-0.821-0.798-1.062l-3.239-2.007c-0.232-0.139-0.496-0.225-0.752-0.24l-1.449-0.132c-0.194-0.015-0.387 0.062-0.527 0.201s-0.209 0.333-0.201 0.535l0.163 2.611c0.023 0.418 0.356 0.736 0.775 0.744l5.424 0.155c0.008 0 0.008 0 0.015 0 0.194 0.008 0.372-0.085 0.488-0.24zM22.524 14.644c-0.008 0.015-0.031 0.023-0.054 0.023l-5.424-0.155c-0.124 0-0.232-0.101-0.24-0.232l-0.163-2.611c0-0.054 0.023-0.093 0.039-0.108s0.047-0.039 0.093-0.039c0 0 0 0 0.008 0l1.449 0.132c0.178 0.008 0.349 0.062 0.496 0.155l3.239 2.007c0.271 0.17 0.473 0.434 0.558 0.744l0.008 0.015c0.015 0.039 0 0.054-0.008 0.070z"></path>
+            <path fill="#fff" style="fill: var(--color1, #fff)" d="M11.855 15.016c0.17 0.077 0.356 0.116 0.542 0.116l2.355 0.023c0.186 0 0.372-0.077 0.496-0.217 0.132-0.139 0.201-0.325 0.186-0.511l-0.178-3.061c-0.039-0.597-0.527-1.062-1.123-1.069l-3.262-0.031c0 0 0 0-0.008 0-0.426 0-0.783 0.325-0.821 0.752l-0.209 2.464c-0.031 0.387 0.186 0.744 0.542 0.899l1.48 0.635zM10.592 11.064c0.015-0.139 0.132-0.248 0.263-0.248v0l3.262 0.031c0.302 0 0.558 0.24 0.581 0.55l0.178 3.061c0 0.054-0.023 0.085-0.039 0.101s-0.046 0.039-0.101 0.039v0l-2.348-0.023c-0.116 0-0.225-0.023-0.333-0.070l-1.48-0.635c-0.139-0.062-0.217-0.201-0.209-0.349l0.225-2.456z"></path>
+            <path fill="#fff" style="fill: var(--color1, #fff)" d="M8.151 14.086c0.403 0 0.744-0.294 0.806-0.69l0.411-2.487c0.031-0.178-0.023-0.356-0.139-0.496s-0.287-0.217-0.465-0.217h-4.037c-0.387 0-0.728 0.263-0.829 0.635l-0.736 2.751c-0.023 0.077-0.008 0.17 0.046 0.232s0.132 0.108 0.209 0.108l4.703 0.163c0.015 0 0.023 0 0.031 0zM4.432 10.979c0.039-0.132 0.155-0.232 0.294-0.232h4.037c0.023 0 0.039 0.015 0.046 0.023s0.015 0.031 0.015 0.054l-0.411 2.487c-0.023 0.132-0.139 0.225-0.271 0.225l-4.362-0.147 0.651-2.41z"></path>
+            <path fill="#fff" style="fill: var(--color1, #fff)" d="M2.030 10.545c-0.147-0.039-0.294 0.054-0.333 0.201l-1.185 4.843c-0.039 0.147 0.054 0.294 0.201 0.333 0.023 0.008 0.046 0.008 0.062 0.008 0.124 0 0.24-0.085 0.271-0.209l1.185-4.843c0.031-0.147-0.054-0.294-0.201-0.333z"></path>
+            </symbol>
+        </defs>
+    </svg>
+    <div class="container" style="width: 933px">
+        <div class="row no-gutters">
+            <section class="col">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+
+                    <div class="carousel-inner" role="listbox">
+                        <article class="carousel-item active">
+                          <a href="#">
+                           <img src="assets/images/color.png" alt="Second slide">
+                            <div class="carousel-content text-center">
+                              <h1 class="heading1">My Pay, Benefits and more</h1>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel magna ut mi maximus aliquam ut at urna.</p>
+                            </div>
+                          </a>
+                        </article>
+                        <article class="carousel-item">
+                            <img src="assets/images/color.png" alt="Second slide">
+                            <div class="carousel-content text-center">
+                              <h1 class="heading1">Carousel item 2</h1>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel magna ut mi maximus aliquam ut at urna.</p>
+                            </div>
+                        </article>
+                        <article class="carousel-item">
+                            <img src="assets/images/color.png" alt="Second slide">
+                            <div class="carousel-content text-center">
+                               <h1 class="heading1">Carousel item 3</h1>
+                               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel magna ut mi maximus aliquam ut at urna.</p>
+                            </div>
+                        </article>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </section>
+        </div>
+        <div class="row no-gutters">
+            <div class="col grad">
+              <section class="clearfix iconspacing">
+                <h2 class="text-white text-center heading2">Popular links</h2>
+                <ul id="popularLinks">
+                    <li class="glyph fs1 col-3">
+                        <a href="#" class="notextdecoration">
+                            <div class="text-center">
+                            <svg class="icon amadeus-seater-car"><use xlink:href="#amadeus-seater-car"></use></svg>
+                            <div class="popularlinkstext text-white">
+                                Lorem ipsum door amet
+                            </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="glyph fs1 col-3">
+                        <div class="text-center">
+                            <svg class="icon amadeus-wheel-drive"><use xlink:href="#amadeus-wheel-drive"></use></svg>
+                            <div class="popularlinkstext text-white">
+                                Lorem ipsum site amet
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="glyph fs1 col-3 ">
+                        <a href="#" class="notextdecoration">
+                        <div class="text-center">
+                                <svg class="icon amadeus-seater-car"><use xlink:href="#amadeus-seater-car"></use></svg>
+                                <div class="popularlinkstext text-white">
+                                Lorem ipsum door amet
+                                </div>
+                        </div>
+                        </a>
+                    </li>
+                        
+                    <li class="glyph fs1 col-3">
+                        <div class="text-center">
+                        <svg class="icon amadeus-wheel-drive"><use xlink:href="#amadeus-wheel-drive"></use></svg>
+                        <div class="popularlinkstext text-white">
+                            Lorem ipsum site amet
+                        </div>
+                        </div>
+                    </li>
+
+                    <li class="glyph fs1 col-3 ">
+                        <a href="#" class="notextdecoration">
+                            <div class="text-center">
+                                <svg class="icon amadeus-seater-car"><use xlink:href="#amadeus-seater-car"></use></svg>
+                                <div class="popularlinkstext text-white">
+                                    Lorem ipsum door amet
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    
+                    <li class="glyph fs1 col-3">
+                            <div class="text-center">
+                                <svg class="icon amadeus-wheel-drive"><use xlink:href="#amadeus-wheel-drive"></use></svg>
+                                <div class="popularlinkstext text-white">
+                                    Lorem ipsum site amet
+                                </div>
+                            </div>
+                    </li>
+
+                    <li class="glyph fs1 col-3 ">
+                        <a href="#" class="notextdecoration">
+                            <div class="text-center">
+                                <svg class="icon amadeus-seater-car"><use xlink:href="#amadeus-seater-car"></use></svg>
+                                <div class="popularlinkstext text-white">
+                                    Lorem ipsum door amet
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                        
+                    <li class="glyph fs1 col-3">
+                        <div class="text-center">
+                            <svg class="icon amadeus-wheel-drive"><use xlink:href="#amadeus-wheel-drive"></use></svg>
+                            <div class="popularlinkstext text-white">
+                                Lorem ipsum site amet
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                    <div class="medialink text-center">
+                        <button type="button" class="btn btn-secondary popularlinksbtn amadeusdarkblue" id="loadMore">Show more</button>
+                        <button type="button" class="btn btn-secondary popularlinksbtn amadeusdarkblue" id="showLess">Show less</button>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="row no-gutters">
+                <section id="mediaArticles" class="col itemspacing">
+                    <h2 class="amadeusdarkblue text-center heading2">There's much more than just a payslip</h2>
+                        
+                        <article class="mediaspacing">
+                           <div class="media">
+                              <img class="d-flex mr-3 rounded col-lg-4 col-md-4" src="assets/images/city-lights.jpg" alt="Generic placeholder image">
+                                <div class="media-body lightgrey mediaspacing">
+                                 <h5 class="mt-0 darkgrey">Medical and security services 000</h5>
+                                 Nulla vel metus scelerisque ante sollicitudin. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                                 <div class="medialink">
+                                   <a href="#">CALL TO ACTION &#10230;</a>
+                                 </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="mediaspacing">
+                                <div class="media">
+                                   <img class="d-flex mr-3 rounded col-lg-4 col-md-4" src="assets/images/city-lights.jpg" alt="Generic placeholder image">
+                                     <div class="media-body lightgrey mediaspacing">
+                                      <h5 class="mt-0 darkgrey">Medical and security services 000</h5>
+                                      Nulla vel metus scelerisque ante sollicitudin. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                                      <div class="medialink">
+                                        <a href="#">CALL TO ACTION &#10230;</a>
+                                      </div>
+                                     </div>
+                                 </div>
+                        </article>
+
+                        <article class="mediaspacing">
+                                <div class="media">
+                                   <img class="d-flex mr-3 rounded col-lg-4 col-md-4" src="assets/images/city-lights.jpg" alt="Generic placeholder image">
+                                     <div class="media-body lightgrey mediaspacing">
+                                      <h5 class="mt-0 darkgrey">Medical and security services 000</h5>
+                                      Nulla vel metus scelerisque ante sollicitudin. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                                      <div class="medialink">
+                                        <a href="#">CALL TO ACTION &#10230;</a>
+                                      </div>
+                                     </div>
+                                 </div>
+                             </article>
+     
+                             <article class="mediaspacing">
+                                    <div class="media">
+                                       <img class="d-flex mr-3 rounded col-lg-4 col-md-4" src="assets/images/city-lights.jpg" alt="Generic placeholder image">
+                                         <div class="media-body lightgrey mediaspacing">
+                                          <h5 class="mt-0 darkgrey">Medical and security services 000</h5>
+                                          Nulla vel metus scelerisque ante sollicitudin. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                                          <div class="medialink">
+                                            <a href="#">CALL TO ACTION &#10230;</a>
+                                          </div>
+                                         </div>
+                                     </div>
+                                 </article>
+
+                                 <article class="mediaspacing">
+                                        <div class="media">
+                                           <img class="d-flex mr-3 rounded col-lg-4 col-md-4" src="assets/images/city-lights.jpg" alt="Generic placeholder image">
+                                             <div class="media-body lightgrey mediaspacing">
+                                              <h5 class="mt-0 darkgrey">Medical and security services 000</h5>
+                                              Nulla vel metus scelerisque ante sollicitudin. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                                              <div class="medialink">
+                                                <a href="#">CALL TO ACTION &#10230;</a>
+                                              </div>
+                                             </div>
+                                         </div>
+                                     </article>
+
+                        <div class="medialink text-center">
+                            <button type="button" class="btn btn-secondary popularlinksbtn amadeusdarkblue" id="loadMoreMedia">Show more</button>
+                            <button type="button" class="btn btn-secondary popularlinksbtn amadeusdarkblue" id="showLessMedia">Show less</button>
+                        </div>
+                    </section>
+        </div>
+        <div class="row no-gutters">
+            <section class="col teamcontainer itemspacing">
+                <img src="assets/images/team.png" style="width: 903px" alt="Creating success through people and culture" />
+                <div class="imgcaption">
+                   <h2>Lorem ipsum dolor sit consectetur adipisicing.</h2>
+                </div>
+            </section>
+        </div>
+        <div class="row no-gutters">
+           <div class="col headspacing">
+              <h2 class="float-left headingleftborder"> 
+                  Getting in touch
+              </h2>            
+              <div class="float-right">
+                 <div class="gettingintouchlink">
+                    <a href="#">LOOKING FOR SOMEONE ELSE &#10230;</a>
+                 </div>
+              </div>
+
+           </div>
+        </div>
+        <div class="row no-gutters justify-content-center">
+           <section class="col-10 mediaspacing amadeustranslightblue rounded profile-nav">
+                <div class="user-heading round row">
+                    
+                    <div class="col-lg-2 text-right">
+                        <i class="fa fa-linkedin amadeusdarkblue iconbig"></i>
+                    </div>
+                    <div class="col-lg-3">
+                       <a href="#">
+                         <img src="assets/images/profile-avatar.jpg" alt="User profile photo">
+                       </a>
+                    </div>
+                    <div class="col-lg-7">
+                        <h5>Firstname Lastname</h5>
+                        <p class="lightgrey">Very long fancy title</p>
+                        <p>Amadeus IT Group, S.A., Spain</p>
+                        <div class="profiledetails">
+                            <p><i class="fa fa-phone"></i> &nbsp; +44 123 456 789</p>
+                            <p><i class="fa fa-envelope-o"></i> &nbsp; <a href="#">firstname.lastname@amadeus.com</a></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="row no-gutters">
+            <div class="col-12 headspacing"><hr /></div>
+        </div>
+        <div class="row no-gutters">
+            <div class="col awardspacing">
+                <h2 class="float-left headingleftborder"> 
+                      We're so proud of these prizes!
+                </h2>            
+                <div class="float-right">
+                    <div class="gettingintouchlink">
+                      <a href="#">SEE ALL AWARDS &#10230;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-4">
+                <div class="card">
+                    <img class="card-img-top" style="height:160px" src="assets/images/award.png" alt="Awards">
+                    <div class="card-block">
+                        <h5 class="card-title">Ipsum lorum door aamet</h5>
+                        <p class="card-text lightgrey textsm">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                 </div>     
+            </div>
+
+            <div class="col-4">
+                <div class="card">
+                    <img class="card-img-top" style="height:160px" src="assets/images/award.png" alt="Awards">
+                    <div class="card-block">
+                        <h5 class="card-title">Ipsum lorum door aamet</h5>
+                        <p class="card-text lightgrey textsm">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>     
+            </div>
+
+            <div class="col-4">
+                <div class="card">
+                    <img class="card-img-top" style="height:160px" src="assets/images/award.png" alt="Awards">
+                    <div class="card-block">
+                        <h5 class="card-title">Ipsum lorum door aamet</h5>
+                        <p class="card-text lightgrey textsm">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>     
+            </div>
+
+        </div>
+        <div class="row no-gutters">
+            <div class="col-12 headspacing">
+              <hr />   
+            </div>
+        </div>
+    </div>
+    <script defer src="svgxuse.js"></script>
+    <script src="assets/js/amadeuspeople.js"></script>
+</body>
 </html>

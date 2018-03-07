@@ -1,0 +1,257 @@
+/* ==========================================
+Color
+========================================== */
+
+.amadeusdarkblue {
+    color: #005EB8;
+}
+.amadeustranslightblue {
+    background-color: rgb(225, 238, 249);
+}
+amadeuslightblue {
+    background-color: rgb(0, 169, 224);     
+}
+.darkgrey {
+    color: #494949;
+}
+.lightgrey {
+    color: #8f8f8f;
+}
+/* ==========================================
+Typography
+========================================== */
+
+/* Webfont: Amadeus */
+@font-face {
+    font-family: 'Amadeus';
+    src: url('../fonts/Web/Amadeus_Web-Light/Amadeus-Light.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Web/Amadeus_Web-Light/Amadeus-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+        url('../fonts/Web/Amadeus_Web-Light/Amadeus-Light.woff') format('woff'), /* Modern Browsers */
+        url('../fonts/Web/Amadeus_Web-Light/Amadeus-Light.ttf') format('truetype'), /* Safari, Android, iOS */
+        url('../fonts/Web/Amadeus_Web-Light/Amadeus-Light.svg#Amadeus-Light') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: normal;
+}
+/* Webfont: Source Sans Pro Regula */
+@font-face {
+    font-family: 'SourceSansProRegular';
+    src: url('../fonts/fontssource-sans-pro-regular.eot');
+    src: url('../fonts/fontssource-sans-pro-regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/fontssource-sans-pro-regular.woff') format('woff'),
+        url('../fonts/fontssource-sans-pro-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+/* Webfont: Source Sans Pro Semi Bold */
+@font-face {
+    font-family: 'SourceSansProSemiBold';
+    src: url('../fonts/fontssource-sans-pro-semibold.eot');
+    src: url('../fonts/fontssource-sans-pro-semibold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/fontssource-sans-pro-semibold.woff') format('woff'),
+        url('../fonts/fontssource-sans-pro-semibold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+body {
+    font-family: 'SourceSansProRegular', 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Amadeus', 'SourceSansProRegular';
+}
+.notextdecoration {
+    text-decoration: none !important;
+}
+.heading2 {
+    font-size:35px;
+    font-weight: normal;
+    font-family: 'Amadeus', SourceSansProRegular;
+    margin-bottom:1em;
+}
+.headingleftborder {
+    border-left: 5px solid #005EB8;
+    padding-left:10px;
+    margin:0;
+    font-size: 19px;
+}
+.textsm {
+    font-size:13px;
+}
+
+/* ==========================================
+Bootstrap additions
+========================================== */
+.carousel-content {
+    position: absolute;
+    left: 50%;
+    top: 47%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    z-index: 20;
+    color: white;
+}
+.carousel-control-prev-icon {
+    background-image: url(../images/SVG/arrowleft.svg);
+    height: 35px;
+    width: 25px;
+}
+.carousel-control-next-icon {
+    background-image: url(../images/SVG/arrowright.svg);
+    height: 35px;
+    width: 25px;
+}
+/* ==========================================
+Page Layout
+========================================== */
+
+.grad {
+    background: linear-gradient( rgb(1, 93, 181), rgb(1, 169, 224));
+}
+.itemspacing {
+    margin-top: 60px;
+}
+.headspacing {
+margin: 50px 0 15px 0;
+}
+.awardspacing {
+    margin: 20px 0 55px 0;
+}
+.teamcontainer {
+    position: relative;
+    text-align: center;
+    color: #005EB8;
+}
+.imgcaption h2 {
+    position: absolute;
+    top: 13%;
+    left: 0;
+    width: 100%;
+}
+/* ==========================================
+Media
+========================================== */
+.medialink {
+    clear:both;
+    margin:30px 0;
+    font-weight: 600;
+    font-size:13px;
+    font-family: 'Amadeus', 'SourceSansProRegular';
+}
+.mediaspacing {
+    margin: 20px 0;
+}
+.media-body {
+    font-size: 14px;
+}
+/* ==========================================
+Getting in touch
+========================================== */
+.gettingintouchlink {
+    font-weight: 600;
+    font-size:13px;
+    font-family: 'Amadeus', 'SourceSansProRegular';
+}
+
+  /*profile*/
+
+.profile-nav .user-heading {
+    border-radius: 4px 4px 0 0;
+    -webkit-border-radius: 4px 4px 0 0;
+    padding: 50px 0;
+}
+.profile-nav .user-heading a img {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+}
+.profile-nav .user-heading h5 {
+    margin-bottom:0;
+    font-size: 30px;
+    font-weight: 500;
+}
+.profile-nav .user-heading p {
+    font-weight:500;
+    font-size:16px;
+    margin-bottom:0;
+}
+.profiledetails {
+    margin:15px 0;
+    color: rgb(0, 169, 224);
+}
+.profiledetails a {
+    color: rgb(0, 169, 224); 
+}
+
+/* ==========================================
+Icons
+========================================== */
+  
+/* Single-colored icons can be modified like so:
+.amadeus-name {
+    font-size: 32px;
+    color: red;
+} */
+.icon {
+    display: inline-block;
+    width: 2.5em;
+    height: 2.5em;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+}
+.iconbig {
+    font-size: 3em !important;
+}
+svg {
+    color: #000;
+}
+.fs0 {
+    font-size: 16px;
+    float: left;
+}
+.fs1 {
+    font-size: 32px;
+    float: left;
+    list-style: none;
+}
+.iconspacing {
+    margin: 70px 0;
+}
+#popularLinks li, #mediaArticles article  { 
+    visibility: hidden;
+    height: 0;
+    width: 0;
+    opacity:0;
+    transition:opacity 1s ease-in;*
+}
+.popularlinkvisible, .mediavisible {
+    visibility: visible !important; 
+    height: 180px !important;  
+    width: 100% !important; 
+    display: inline-block !important; 
+    position: relative !important; 
+    opacity: 1 !important;
+    -webkit-transition: all 1s ease-out;
+    -moz-transition: opacity 1s ease-out;
+    -o-transition: opacity 1s ease-out;
+    transition: opacity 1s ease-in;
+}
+.popularlinkhide, .mediahide {
+    visibility: hidden !important; 
+    height: 0 !important;  
+    width: 0%!important; 
+    opacity: 0 !important;
+    transition: opacity 1s ease-in;
+}
+.popularlinkstext {
+    font-size: 17px;
+}
+.popularlinksbtn {
+    margin:0;
+}
+#showLess, #showLessMedia {
+    display:none;
+}
+
+
+  
